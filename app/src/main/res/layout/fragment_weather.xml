@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.fragments.ForecastFragment">
+
+    <LinearLayout
+        android:id="@+id/layoutCityName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/dodgerBlue"
+        android:orientation="horizontal"
+        android:padding="2dp"
+        android:weightSum="7">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="2dp"
+            android:src="@mipmap/ic_location_1" />
+
+        <TextView
+            android:id="@+id/txtCityName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:textColor="@color/white"
+            android:textSize="30dp" />
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="2dp"
+            android:src="@mipmap/ic_aim" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtCurrentDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/dodgerBlue"
+        android:paddingLeft="20dp"
+        android:textColor="@color/white"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/emptyTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/dodgerBlue"
+        android:textSize="30dp" />
+
+    <LinearLayout
+        android:id="@+id/layoutCurrentWeather"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/emptyTxt"
+        android:background="@color/dodgerBlue"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <ImageView
+            android:id="@+id/imgCurrentWeather"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtTemperature"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="5dp"
+                android:textAlignment="textStart"
+                android:textColor="@color/white"
+                android:textSize="25dp" />
+
+            <TextView
+                android:id="@+id/txtHumidity"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="5dp"
+                android:textAlignment="textStart"
+                android:textColor="@color/white"
+                android:textSize="25dp" />
+
+            <TextView
+                android:id="@+id/txtWindSpeed"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="5dp"
+                android:textAlignment="textStart"
+                android:textColor="@color/white"
+                android:textSize="25dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/emptyTxt2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/dodgerBlue"
+        android:textSize="30dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rclOfDay"
+        android:name="com.example.weather.ui.fragments.ForecastFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layoutCurrentWeather"
+        android:background="@color/dodgerBlue"
+        android:orientation="vertical"
+        app:layoutManager="LinearLayoutManager"
+        tools:context=".MainActivity"
+        tools:listitem="@layout/forecast_of_day_item"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rclOfWeek"
+        android:name="com.example.weather.ui.fragments.ForecastFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rclOfDay"
+        android:background="@color/white"
+        android:orientation="vertical"
+        app:layoutManager="LinearLayoutManager"
+        tools:context=".MainActivity"
+        tools:listitem="@layout/forecast_of_week_item"
+        />
+
+
+
+</LinearLayout>
